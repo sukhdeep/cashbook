@@ -1,0 +1,49 @@
+<html>
+<body>
+<form method="POST">
+<TABLE BORDER="5"    WIDTH="100%" >
+<center>
+<button type="button">click me</button>
+</center> <form name="form" method="post" action="signup.php">
+   <TR>
+      <TH COLSPAN="5"><BR><H3>CREDIT</H3>
+      <TH COLSPAN="2"><BR><H3>DEBIT</H3>
+      
+      </TH>
+   </TR>
+   <TR>
+      <TH>date</TH>
+      <TH>recipt no</TH>
+      <TH>name</TH>
+      <TH>amount</TH>
+      <TH>total amount</TH>
+      <TH>MODE OF PAYMENT</TH>
+      <TH>total amount</TH>
+   </TR>
+   </TR>
+{% if job %} 
+        {% for dates in date %}
+	{% for jobs in job %}
+	{% for totals in net_total %}
+	{% for names in name %}
+		
+   <TR ALIGN="CENTER">
+      <td>{{dates.date}}</td>
+      <td>{{jobs.job_no}}</td>
+      <TD>{{ names.name }}</TD>
+      <TD>{{ totals.price }}</TD>
+      <TD>{{totals.net_total}}</TD>
+      <TD>{{jobs.pay}}</TD>
+      <TD>{{totals.net_total}}</TD>
+   </TR>
+		
+	{% endfor %}
+        {% endfor %}
+        {% endfor %}
+	{% endfor %}
+{% endif %}
+</TABLE>
+</form>
+</body>
+</html>
+
